@@ -5,6 +5,7 @@ import ProductIcon from './Product'
 import User from './User'
 import UserIcon from './Users' 
 import OutIcon from './Out'
+import KeyIcon from './Key'
 
 export {
     Datapip,
@@ -13,5 +14,6 @@ export {
     UserIcon,
     ProductIcon,
     User,
-    OutIcon
+    OutIcon,
+    KeyIcon
 }

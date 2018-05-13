@@ -48,7 +48,7 @@ class Slider extends Component {
         )
     }
     componentDidMount () {
-      console.log(this.props.history)
+    //   console.log(this.props.history)
     }
     onClose () {
 

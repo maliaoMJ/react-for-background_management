@@ -2,8 +2,19 @@
   "name": "management",
   "version": "0.1.0",
   "private": true,
+  "proxy": {
+    "/manage": {
+      "target": "http://admintest.happymmall.com",
+      "changeOrigin": true
+    },
+    "/user/logout.do": {
+      "target": "http://admintest.happymmall.com",
+      "changeOrigin": true
+    }
+  },
   "dependencies": {
     "autoprefixer": "7.1.6",
+    "axios": "^0.18.0",
     "babel-core": "6.26.0",
     "babel-eslint": "7.2.3",
     "babel-jest": "20.0.3",

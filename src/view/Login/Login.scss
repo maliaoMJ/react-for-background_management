@@ -1,0 +1,105 @@
+.LoginView{
+    width:100%;
+    height:100%;
+    display:block;
+    position: relative;
+    background: linear-gradient(to bottom, #616060 0%,#161414 100%);
+    color:#fff;
+    .silderLeft{
+       width:20vh;
+       height:20vh;
+       position: absolute;
+       left:50%;
+       margin-left:-10vh;
+       top:16vh;
+        svg {
+            width:20vh;
+            height:20vh;
+        }
+    }
+    .formBox{
+       position: absolute;
+       left:50%;
+       margin-left:-22.5vh;
+       top:40vh;
+        width:45vh;
+        height:30vh;
+        background:#eee;
+        border-radius: 8px;
+        text-align:center;
+        color:rgb(10, 10, 10);
+        overflow: hidden;
+        padding-top:2vh;
+        h5{
+            width:80px;
+            background:#eee;
+            margin: 0 auto;
+            position:relative;
+        }
+        .line{
+            margin-top:-8px;
+            margin-bottom:20px;
+            width:80%;
+            margin-left:10%;
+        }
+        p{
+            margin-top:1vh;
+            height:5vh;
+            width:88%;
+            margin-left:6%;
+            line-height: 5vh;
+            display: flex;
+            flex-direction: row;
+            border:1px solid #eee;
+            border-radius: 4px;
+            label{
+             width:5vh;
+             font-size:14px;
+             letter-spacing: normal;
+             box-sizing:border-box;
+             background:#fff;
+             border-right:1px solid #eee;
+             border-bottom-left-radius: 4px;
+             border-top-left-radius: 4px;
+             svg{
+                 fill:gray;
+                 margin-top:4px;
+                 transform: scale(1.2);
+             }
+            }
+            input{
+                flex:1;
+                outline: none;
+                background:#fff;
+                border:none;
+                font-size:16px;
+                color:rgb(10,10,10);
+                border-bottom-right-radius: 4px;
+                border-top-right-radius: 4px;
+                padding-left:4px;
+            }
+        }
+        .btn-success{
+            width:90%;
+            text-align:center;
+            display:block;
+            background:#4d00ef;
+            margin-left:5%;
+            margin-top:13px;
+            color:#fff;
+            font-size:14px;
+            border:1px solid #fff;
+            cursor:pointer;
+            &:hover{
+                background:#814bf5;
+            }
+        }
+    }
+    .power{
+        position:absolute;
+        bottom:25px;
+        width:100%;
+        text-align:center;
+        font-size:12px;
+    }
+}

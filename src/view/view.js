@@ -4,7 +4,7 @@ import User from './User/User'
 import Product from './Product/Product'
 import Category from './Category/Category'
 import IndexPage from './Index/index'
-import Sigin from './Sigin/Sigin'
+import Login from './Login/Login'
 import NoFound from './NoFound/NoFound'
 import Error from './Error/Error'
 export {
@@ -14,7 +14,7 @@ export {
     User,
     Product,
     IndexPage,
-    Sigin,
+    Login,
     NoFound,
     Error
 }
