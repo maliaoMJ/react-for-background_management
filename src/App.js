@@ -1,57 +1,35 @@
 import React, { Component } from 'react';
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
-import Header from './components/Header/Header'
-import Slider from './components/Slider/Slider'
+import {Route, Switch} from 'react-router-dom'
+// 加載视图
+import {IndexPage} from './view/view'
 import './assets/style/App.scss';
 
-const Home = ()=>{
-  return (
-    <div>Home page</div>
-  )
-}
-const Index = () => {
-  return ( <div> Index page </div>)
-}
-const User = () => {
-  return ( <div> User page </div>
-  )
-}
-const Detail = ({match}) => {
-  return (
-    <div>detail id is {match.params.id}</div>
-  )
-}
 const NoFound = () => {
   return (
     <div>No Found 404</div>
   )
 }
+const Error = ()=> {
+  return (
+    <div>error page</div>
+  )
+}
 class App extends Component {
+  constructor (props) {
+    super(props)
+  }
+
   render() {
     return (
       <div className="App">
-        <div className="header">
-          <Header></Header>
-        </div>
-        <div className="body">
-            <div className="slider">
-              <Slider></Slider>
-            </div>
-            <div className="container">
-              <div className="navgation"><p calssName="navgationTitle">商品管理</p></div>
-              <div className="box">
-              <Router>
-                <Switch>
-                  <Route exact path='/' component={Index}></Route>
-                  <Route exact path='/home' component={Home}></Route>
-                  <Route exact path='/user' component={User}></Route>
-                  <Route exact path='/detail/:id' component={Detail}></Route>
-                  <Route component={NoFound}></Route>
-                </Switch>
-              </Router>
-              </div>
-            </div>
-        </div>
+        <Switch>
+          <Route exact path='/' component={IndexPage}></Route>
+          <Route exact path='/sigin' component={IndexPage}></Route>
+          <Route exact path='/error' component={Error}></Route>
+          <Route  path='/index' component={IndexPage}></Route>
+          <Route component={NoFound}></Route>
+        </Switch>
+
       </div>
     );
   }

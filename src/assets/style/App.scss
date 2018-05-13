@@ -4,46 +4,7 @@
     left:0;
     width:100%;
     height:100%;
-    display: flex;
-    flex-direction: column;
-    .header{
-      height:auto;
-      background:greenyellow;
-    }
-    .body{
-      flex:1;
-      display: flex;
-      flex-direction: row;
-      .slider{
-          width:12rem;
-          background:#334156;
-          color:#fff;
-      }
-      .container{
-          flex:1;
-          display: flex;
-          flex-direction: column;
-          .navgation{
-              height:36px;
-              display:block;
-              background:#fff;
-              box-sizing:border-box;
-              border-bottom:2px solid gray;
-              p{
-                  height:100%;
-                  line-height:36px;
-                  font-size:12px;
-                  box-sizing:border-box;
-                  padding-left:20px;
-              }
-          }
-          .box{
-              flex:1;
-              display:block;
-              overflow-y:auto;
-          }
-      }
-    }
+    display: block;
 }
 
 
