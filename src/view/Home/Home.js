@@ -4,7 +4,7 @@ import './Home.scss'
 class Home extends Component {
     render () {
         return (
-            <div></div>
+            <div>Home page</div>
         )
     }
 }

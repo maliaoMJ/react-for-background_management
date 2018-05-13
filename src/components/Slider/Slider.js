@@ -23,16 +23,13 @@ class Slider extends Component {
                             <Menu.Item index="1-1" className="backgroundColor">
                                 <NavLink exact to="/index/home" activeClassName="seletedActive" className="navlinks">总体概览</NavLink>
                             </Menu.Item>
-                            <Menu.Item index="1-2" className="backgroundColor">
-                                <NavLink exact to="/index/home" activeClassName="seletedActive" className="navlinks">商品分析</NavLink>
-                            </Menu.Item>
                         </Menu.SubMenu>
                         <Menu.SubMenu index="2" title={<span><i><ProductIcon/></i>商品</span>}>
                             <Menu.Item index="2-1" className="backgroundColor">
                                 <NavLink exact to="/index/product" activeClassName="seletedActive" className="navlinks">商品管理</NavLink>
                             </Menu.Item>
                             <Menu.Item index="2-2" className="backgroundColor">
-                                <NavLink exact to="/index/catgory" activeClassName="seletedActive" className="navlinks">品类管理</NavLink>
+                                <NavLink exact to="/index/category" activeClassName="seletedActive" className="navlinks">品类管理</NavLink>
                             </Menu.Item>
                         </Menu.SubMenu>
                         <Menu.SubMenu index="3" title={<span><i><OrderIcon></OrderIcon></i>订单</span>}>
