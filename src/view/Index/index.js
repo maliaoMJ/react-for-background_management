@@ -15,7 +15,7 @@ class IndexPage extends Component {
         return (
             <div className="IndexPage">
                 <div className="header">
-                    <Header></Header>
+                    <Header history={this.props.history}></Header>
                 </div>
                 <div className="body">
                     <div className="slider">
@@ -38,6 +38,9 @@ class IndexPage extends Component {
                 </div>
             </div>
         )
+    }
+    componentDidMount () {
+ 
     }
 }
 

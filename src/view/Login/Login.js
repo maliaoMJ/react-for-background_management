@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {Logo, User, KeyIcon } from '../../components/icons/index'
-import { getDataByPost } from '../../util/rutil'
+import { getDataByPost, saveLocalStorage } from '../../util/rutil'
 import './Login.scss'
 
 
@@ -65,11 +65,9 @@ class Login extends Component {
         if (username && password) {
             let { data } = await getDataByPost('/manage/user/login.do', { username, password })
             if (data.status === 0) {
-                //登录成功
-                console.log(data)
-                console.log(this.props)
-                this.props.history.push('/index/home')
-                
+                //登录成功，写入localStroage 跳转页面
+                saveLocalStorage('userInfo', data.data)
+                this.props.history.push('/index/home') 
             } else {
                 alert(data.msg)
             }
