@@ -1,0 +1,22 @@
+.headerComponent{
+    width:100%;
+    height:60px;
+    background:#334156;
+    position: relative;
+
+    .icon{
+        display:inline-block;
+        height:60px;
+        margin-left: 20px;
+        padding-top:10px;
+    }
+    .user{
+        display: inline-block;
+        width:100px;
+        position: absolute;
+        right:40px;
+        .el-submenu .el-menu-item{
+           min-width: 120px;
+        }
+    }
+}

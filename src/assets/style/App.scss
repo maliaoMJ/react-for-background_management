@@ -1,0 +1,38 @@
+.App {
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    .header{
+      height:auto;
+      background:greenyellow;
+    }
+    .body{
+      flex:1;
+      display: flex;
+      flex-direction: row;
+      .slider{
+          width:12rem;
+          background:#334156;
+          color:#fff;
+      }
+      .container{
+          flex:1;
+          display: flex;
+          flex-direction: column;
+          .navgation{
+              height:2.5rem;
+              background:green;
+          }
+          .box{
+              flex:1;
+              background:gray;
+          }
+      }
+    }
+}
+
+
