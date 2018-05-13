@@ -24,12 +24,23 @@
           display: flex;
           flex-direction: column;
           .navgation{
-              height:2.5rem;
-              background:green;
+              height:36px;
+              display:block;
+              background:#fff;
+              box-sizing:border-box;
+              border-bottom:2px solid gray;
+              p{
+                  height:100%;
+                  line-height:36px;
+                  font-size:12px;
+                  box-sizing:border-box;
+                  padding-left:20px;
+              }
           }
           .box{
               flex:1;
-              background:gray;
+              display:block;
+              overflow-y:auto;
           }
       }
     }

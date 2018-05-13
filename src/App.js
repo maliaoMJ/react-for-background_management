@@ -38,7 +38,7 @@ class App extends Component {
               <Slider></Slider>
             </div>
             <div className="container">
-              <div className="navgation"><i className="fa fa-user">dsfdsfdsfdsfds</i></div>
+              <div className="navgation"><p calssName="navgationTitle">商品管理</p></div>
               <div className="box">
               <Router>
                 <Switch>
