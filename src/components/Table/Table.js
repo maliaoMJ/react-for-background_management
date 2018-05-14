@@ -16,7 +16,6 @@ class ImTable extends Component {
                     border={true}
                     highlightCurrentRow={true}
                     emptyText={'暂无数据'}
-                    maxHeight = {'500'}
                     fit = {true}
                     {...this.props}
                     onCurrentChange={item => {}}

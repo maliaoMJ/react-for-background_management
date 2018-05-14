@@ -70,17 +70,17 @@ class User extends Component {
                         )
                     }
                 },
-                {
-                    label: "最近登录",
-                    prop: "updateTime",
-                    render: function (data) {
-                        return (
-                            <span>
-                                {data.updateTime}
-                            </span>
-                        )
-                    }
-                }
+                // {
+                //     label: "最近登录",
+                //     prop: "updateTime",
+                //     render: function (data) {
+                //         return (
+                //             <span>
+                //                 {data.updateTime}
+                //             </span>
+                //         )
+                //     }
+                // }
             ],
             data: [],
             currentPage: 1,
@@ -116,7 +116,7 @@ class User extends Component {
                      // 到底用不用moment.js 纠结
                   let data = res.data.data.list.map(item => {
                      item.createTime = new Date(item.createTime).toLocaleTimeString()
-                     item.updateTime = new Date(item.updateTime).toLocaleTimeString()
+                    //  item.updateTime = new Date(item.updateTime).toLocaleTimeString()
                      return item
                  })
                      this.setState({

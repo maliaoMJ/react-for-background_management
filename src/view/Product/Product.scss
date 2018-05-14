@@ -1,0 +1,19 @@
+.UserPage{
+    width:100%;
+    height:auto;
+    overflow: auto;
+    .el-pagination{
+        margin-top:10px;
+        text-align:center;
+    }
+    .SearchBox{
+        width:70%;
+        margin-left: 2%;
+        margin-top:20px;
+        margin-bottom:0px;
+    }
+    .el-form-item{
+        margin-bottom:0px;
+        padding-bottom:0px;
+    }
+}
