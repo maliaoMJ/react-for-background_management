@@ -20,11 +20,25 @@ function formatData (params) {
   
 }
 // 理因try{}catch(){}
-function getDataByPost (url, data) {
+async function getDataByPost (url, data = '') {
   let  dataStr = formatData(data)
-  return  Axios.post(url,dataStr)
+  return await Axios.post(url,dataStr)
 
 }
+async function getDataByGet(url, data = ''){
+   let dataStr =  formatData(data)
+   if(!dataStr){
+       return await  Axios.get(url)
+   }else{
+   return await Axios.get(url,data)
+   } 
+}
+// async function getDataByPut (url, data) {}
+// async function getDataByDelete (url, data) {}
+
+
+
+
 // 游览器支持情况 ，我就没有见过不支持的
 function isSupportStorage () {
     if(window.localStorage){
@@ -97,6 +111,7 @@ function removeCookie(name) {
 
 export {
     getDataByPost,
+    getDataByGet,
     saveLocalStorage,
     readLocalStorage,
     deleteLocalStorage
