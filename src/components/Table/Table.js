@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import { Table ,Icon, Tag, Button, Pagination } from 'element-react'
+import { Table} from 'element-react'
 
 import './Table.scss'
 
@@ -22,7 +22,6 @@ class ImTable extends Component {
                     onCurrentChange={item => {}}
 
                 />
-                   <Pagination layout="total, prev, pager, next, jumper" total={400}  currentPage={5}/>
           </div>
         )
     }

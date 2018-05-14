@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import {Pagination, Icon } from 'element-react'
+import { getDataByGet } from '../../util/rutil'
 import ImTable from '../../components/Table/Table'
 import './User.scss'
 
@@ -35,7 +37,10 @@ class User extends Component {
                     render: function (data) {
                         return (
                             <span>
-                                {data.email}
+                                <Icon name="message" />
+                                <span style={{ marginLeft: '5px' }}>
+                                    {data.email}
+                                </span>
                             </span>
                         )
                     }
@@ -57,7 +62,10 @@ class User extends Component {
                     render: function (data) {
                         return (
                             <span>
-                                {data.createTime}
+                                <Icon name="time" />
+                                <span style={{ marginLeft: '5px' }}>
+                                  {data.createTime}
+                                </span>
                             </span>
                         )
                     }
@@ -74,95 +82,11 @@ class User extends Component {
                     }
                 }
             ],
-            data: [{
-                id: '111111',
-                username: '王小虎',
-                email: '1302151931@qq.com',
-                phone: '13213832373',
-                createTime: '2017-08-18 09:32:68',
-                updateTime: '2017-08-18 09:32:68',
+            data: [],
+            currentPage: 1,
+            size: 10,
+            pageCount: 0
 
-            },
-        {
-                id: '111111',
-                username: '王小虎',
-                email: '1302151931@qq.com',
-                phone: '13213832373',
-                createTime: '2017-08-18 09:32:68',
-                updateTime: '2017-08-18 09:32:68',
-
-            },
-        {
-                id: '111111',
-                username: '王小虎',
-                email: '1302151931@qq.com',
-                phone: '13213832373',
-                createTime: '2017-08-18 09:32:68',
-                updateTime: '2017-08-18 09:32:68',
-
-            },
-        {
-                id: '111111',
-                username: '王小虎',
-                email: '1302151931@qq.com',
-                phone: '13213832373',
-                createTime: '2017-08-18 09:32:68',
-                updateTime: '2017-08-18 09:32:68',
-
-            },
-        {
-                id: '111111',
-                username: '王小虎',
-                email: '1302151931@qq.com',
-                phone: '13213832373',
-                createTime: '2017-08-18 09:32:68',
-                updateTime: '2017-08-18 09:32:68',
-
-            },
-        {
-                id: '111111',
-                username: '王小虎',
-                email: '1302151931@qq.com',
-                phone: '13213832373',
-                createTime: '2017-08-18 09:32:68',
-                updateTime: '2017-08-18 09:32:68',
-
-            },   {
-                id: '111111',
-                username: '王小虎',
-                email: '1302151931@qq.com',
-                phone: '13213832373',
-                createTime: '2017-08-18 09:32:68',
-                updateTime: '2017-08-18 09:32:68',
-
-            },
-        {
-                id: '111111',
-                username: '王小虎',
-                email: '1302151931@qq.com',
-                phone: '13213832373',
-                createTime: '2017-08-18 09:32:68',
-                updateTime: '2017-08-18 09:32:68',
-
-            },
-        {
-                id: '111111',
-                username: '王小虎',
-                email: '1302151931@qq.com',
-                phone: '13213832373',
-                createTime: '2017-08-18 09:32:68',
-                updateTime: '2017-08-18 09:32:68',
-
-            },
-        {
-                id: '111111',
-                username: '王小虎',
-                email: '1302151931@qq.com',
-                phone: '13213832373',
-                createTime: '2017-08-18 09:32:68',
-                updateTime: '2017-08-18 09:32:68',
-
-            }]
         }
     }
     render() {
@@ -173,8 +97,44 @@ class User extends Component {
                   columns= {this.state.columns}
                   data= {this.state.data}
                 />
+                <Pagination
+                    layout="total, prev, pager, next, jumper" pageCount={this.state.pageCount} 
+                    currentPage={this.state.currentPage}
+                    onCurrentChange={this.changePageNumber.bind(this)}
+                    />
             </div>
         )
+    }
+    componentDidMount () {
+        //初始化
+        this.loadUserList(1)
+    }
+    loadUserList (pageNumber) {
+        getDataByGet(`/manage/user/list.do?pageNum=${pageNumber}`)
+            .then(res => {
+                 if(res.data.status === 0){
+                     // 到底用不用moment.js 纠结
+                  let data = res.data.data.list.map(item => {
+                     item.createTime = new Date(item.createTime).toLocaleTimeString()
+                     item.updateTime = new Date(item.updateTime).toLocaleTimeString()
+                     return item
+                 })
+                     this.setState({
+                         data: data,
+                         currentPage: pageNumber,
+                         pageCount: res.data.data.pages
+                     })
+                 }else{
+                     alert(res.data.msg)
+                     this.props.history.push('/login')
+                 }
+            })
+            .catch(error => {
+             alert('请求数据出错！')
+            })
+    }
+    changePageNumber (value) {
+        this.loadUserList(value)
     }
 }
 

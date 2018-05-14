@@ -26,11 +26,11 @@ async function getDataByPost (url, data = '') {
 
 }
 async function getDataByGet(url, data = ''){
-   let dataStr =  formatData(data)
+    let dataStr = formatData(data)
    if(!dataStr){
        return await  Axios.get(url)
    }else{
-   return await Axios.get(url,data)
+       return await Axios.get(url, dataStr)
    } 
 }
 // async function getDataByPut (url, data) {}
